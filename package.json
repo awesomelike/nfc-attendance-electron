@@ -65,6 +65,8 @@
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
@@ -73,12 +75,14 @@
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "@electron-forge/plugin-webpack": "^6.0.0-beta.54",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^4.3.0",
     "electron": "11.2.1",
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.22.0",
     "exe-icon-extractor": "^1.0.8",
     "file-loader": "^6.2.0",
     "node-loader": "^1.0.2",
@@ -96,6 +100,8 @@
     "ip": "^1.1.5",
     "morgan": "^1.10.0",
     "node-cache": "^5.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "smartcard": "^1.0.37",
     "socket.io": "^3.1.0"
   }

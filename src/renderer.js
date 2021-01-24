@@ -1,25 +1,27 @@
+import './App.jsx';
+
 const { ipcRenderer } = require('electron');
-require('./index.css');
+// require('./index.css');
 
-let originalDeviceName = 'Unknown';
-let originalDeviceStatus = 'Disconnected';
+// let originalDeviceName = 'Unknown';
+// let originalDeviceStatus = 'Disconnected';
 
-const deviceNameField = document.querySelector('#device-name');
-const deviceStatusField = document.querySelector('#device-status');
+// const deviceNameField = document.querySelector('#device-name');
+// const deviceStatusField = document.querySelector('#device-status');
 
-ipcRenderer.on('deviceActivated', (event, deviceName) => {
-  originalDeviceName = deviceName;
-  originalDeviceStatus = 'Connected';
+// ipcRenderer.on('deviceActivated', (event, deviceName) => {
+//   originalDeviceName = deviceName;
+//   originalDeviceStatus = 'Connected';
 
-  deviceNameField.textContent = originalDeviceName;
-  deviceStatusField.textContent = originalDeviceStatus;
-});
+//   deviceNameField.textContent = originalDeviceName;
+//   deviceStatusField.textContent = originalDeviceStatus;
+// });
 
-ipcRenderer.on('deviceDeactivated', () => {
-  originalDeviceStatus = 'Disconnected';
-  deviceStatusField.textContent = originalDeviceStatus;
-});
+// ipcRenderer.on('deviceDeactivated', () => {
+//   originalDeviceStatus = 'Disconnected';
+//   deviceStatusField.textContent = originalDeviceStatus;
+// });
 
-ipcRenderer.on('cardReceived', (event, rfid) => {
-  // deviceNameField.textContent = rfid;
-});
+// ipcRenderer.on('cardReceived', (event, rfid) => {
+//   // deviceNameField.textContent = rfid;
+// });
