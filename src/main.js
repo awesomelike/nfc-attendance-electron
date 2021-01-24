@@ -42,7 +42,6 @@ app.on('activate', () => {
 });
 
 emitter.on('deviceActivated', (device) => {
-  console.log('GENTLELADY!');
   setTimeout(() => {
     mainWindow.webContents.send('deviceActivated', device.name);
   }, 5000);
