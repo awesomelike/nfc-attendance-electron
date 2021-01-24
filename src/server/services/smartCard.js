@@ -2,7 +2,7 @@ const smartcard = require('smartcard');
 const emitter = require('../events');
 
 const { Devices } = smartcard;
-let devices = new Devices();
+const devices = new Devices();
 
 require('dotenv').config();
 
@@ -14,10 +14,8 @@ devices.on('device-activated', (event) => {
     const { card } = event;
     card
       .issueCommand('FFCA000000')
-      .then(() => {
-      }).catch((error) => {
-        console.error(error);
-      });
+      .then(() => {})
+      .catch(console.error);
 
     card.on('response-received', async (event) => {
       const rfid = event.response.getDataOnly();
@@ -29,12 +27,10 @@ devices.on('device-activated', (event) => {
 
 devices.on('device-deactivated', (e) => {
   emitter.emit('deviceDeactivated');
-  devices = new Devices();
   console.log(e);
 });
 
 devices.on('error', (e) => {
-  devices = new Devices();
   emitter.emit('deviceDeactivated');
   console.log(e);
 });
