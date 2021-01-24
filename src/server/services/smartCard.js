@@ -4,8 +4,6 @@ const emitter = require('../events');
 const { Devices } = smartcard;
 const devices = new Devices();
 
-require('dotenv').config();
-
 devices.on('device-activated', (event) => {
   const { device } = event;
   emitter.emit('deviceActivated', device);

@@ -2,18 +2,16 @@ const createError = require('http-errors');
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const socketIO = require('socket.io');
 const { createServer } = require('http');
 const ip = require('ip');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes');
 
 const app = express();
 const server = createServer(app);
 const io = socketIO(server, { rememberTransport: false, transports: ['websocket', 'polling'] });
 app.io = io;
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
