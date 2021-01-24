@@ -10,17 +10,20 @@ devices.on('device-activated', (event) => {
   const { device } = event;
   emitter.emit('deviceActivated', device);
   console.log(`${device.name} is connected`);
-  device.on('card-inserted', (event) => {
-    const { card } = event;
+  device.on('card-inserted', ({ card }) => {
     card
       .issueCommand('FFCA000000')
       .then(() => {})
       .catch(console.error);
 
-    card.on('response-received', async (event) => {
-      const rfid = event.response.getDataOnly();
-      console.log(rfid);
+    card.on('response-received', ({ response }) => {
+      const rfid = response.getDataOnly();
       emitter.emit('cardReceived', rfid);
+      console.log(rfid);
+    });
+    card.on('card-removed', () => {
+      console.log('CARD_REMOVED');
+      emitter.emit('cardRemoved');
     });
   });
 });

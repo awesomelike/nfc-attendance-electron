@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const emitter = require('./server/events');
 require('./server');
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -54,4 +54,7 @@ emitter.on('deviceDeactivated', () => {
 
 emitter.on('cardReceived', (rfid) => {
   mainWindow.webContents.send('cardReceived', rfid);
+});
+emitter.on('cardRemoved', () => {
+  mainWindow.webContents.send('cardRemoved');
 });

@@ -7,9 +7,10 @@ const { ipcRenderer } = require('electron');
 const App = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [deviceName, setDeviceName] = useState('Unknown');
+  const [cardReceived, setCardReceived] = useState(null);
 
   useEffect(() => {
-    ipcRenderer.on('deviceActivated', (event, dvcName) => {
+    ipcRenderer.on('deviceActivated', (_, dvcName) => {
       setDeviceName(dvcName);
       setIsConnected(true);
     });
@@ -18,8 +19,11 @@ const App = () => {
       setIsConnected(false);
     });
 
-    ipcRenderer.on('cardReceived', (event, rfid) => {
-      // deviceNameField.textContent = rfid;
+    ipcRenderer.on('cardReceived', (_, rfid) => {
+      setCardReceived(rfid);
+      setTimeout(() => {
+        setCardReceived(null);
+      }, 300);
     });
 
     return () => {
@@ -48,10 +52,12 @@ const App = () => {
           </div>
         </div>
         <div className="container-body-button">
-          <button type="button"><span>ON</span></button>
+          <button type="button" style={{
+            'background-color': cardReceived ? '#9100CE' : '#9e23d3',
+          }}><span>ON</span></button>
         </div>
         <div className="flexer">
-          <span>Click to switch on</span>
+          <span>{cardReceived || 'Click to switch on'}</span>
         </div>
       </div>
     </div>
