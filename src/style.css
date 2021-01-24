@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 0;
   color: #6E686F;
 }
 .container {
@@ -54,7 +54,7 @@ body {
   color: white;
   background-color: rgb(78, 78, 78);
   height: 30px;
-  font-size: 21px;
+  /* font-size: 21px; */
   width: 100%;
 }
 .container-body-button {
@@ -71,6 +71,8 @@ body {
   color: white;
   border: 4px solid #CF29FF;
   border-radius: 50%;
+  box-shadow: 1px 1px 50px #CF29FF;
+  transition: box-shadow .6s;
 }
 .container-body-button button:hover {
   background-color: #9e23d3;

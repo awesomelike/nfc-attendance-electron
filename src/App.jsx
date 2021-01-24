@@ -20,10 +20,11 @@ const App = () => {
     });
 
     ipcRenderer.on('cardReceived', (_, rfid) => {
+      if (!isConnected) setIsConnected(true);
       setCardReceived(rfid);
       setTimeout(() => {
         setCardReceived(null);
-      }, 300);
+      }, 1000);
     });
 
     return () => {
@@ -47,17 +48,17 @@ const App = () => {
         </div>
         <div className="container-body-list-item">
           <div>Port number: </div>
-          <div>
-            <input spellCheck="false" id="input-port" type="text" />
-          </div>
+          <div>3002</div>
         </div>
         <div className="container-body-button">
-          <button type="button" style={{
-            'background-color': cardReceived ? '#9100CE' : '#9e23d3',
-          }}><span>ON</span></button>
+          <button type="button" style={cardReceived && {
+            'background-color': '#12AA36',
+            boxShadow: '1px 1px 50px #37FF4B',
+            'border-color': '#29FF54',
+          }}><span>{cardReceived && 'RFID'}</span></button>
         </div>
         <div className="flexer">
-          <span>{cardReceived || 'Click to switch on'}</span>
+          <span>{cardReceived || 'Indicator'}</span>
         </div>
       </div>
     </div>
