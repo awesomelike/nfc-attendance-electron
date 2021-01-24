@@ -8,7 +8,7 @@ module.exports = {
     'plugin:react/recommended',
   ],
   plugins: [
-    'react'
+    'react',
   ],
   parserOptions: {
     ecmaVersion: 12,
