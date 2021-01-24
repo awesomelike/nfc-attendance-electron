@@ -1,6 +1,15 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Gameplay.ttf", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
+  background-color: #f3f3f3;
+}
+
+.title {
+  text-align: center;
+}
+
+img {
+  width: 50px;
 }
