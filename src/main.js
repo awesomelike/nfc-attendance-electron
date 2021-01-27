@@ -2,7 +2,12 @@ const {
   app, BrowserWindow, Tray, Menu,
 } = require('electron');
 const path = require('path');
+const electronLog = require('electron-log');
 const emitter = require('./server/events');
+require('update-electron-app')({
+  logger: electronLog,
+  updateInterval: '5h',
+});
 require('./server');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.

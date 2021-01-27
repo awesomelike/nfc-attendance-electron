@@ -3,6 +3,9 @@
   "productName": "IUT NFC Reader",
   "version": "1.0.0",
   "description": "IUT NFC Reader driver software",
+  "repository": {
+    "url": "https://github.com/awesomelike/nfc-attendance-electron"
+  },
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -48,6 +51,17 @@
           "config": {}
         }
       ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "awesomelike",
+              "name": "nfc-attendance-electron"
+            }
+          }
+        }
+      ],
       "plugins": [
         [
           "@electron-forge/plugin-webpack",
@@ -78,6 +92,7 @@
     "@electron-forge/maker-wix": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "@electron-forge/plugin-webpack": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^6.2.1",
@@ -96,6 +111,7 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "debug": "^4.3.1",
+    "electron-log": "^4.3.1",
     "electron-squirrel-startup": "^1.0.0",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
@@ -103,6 +119,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "smartcard": "^1.0.37",
-    "socket.io": "^3.1.0"
+    "socket.io": "^3.1.0",
+    "update-electron-app": "^2.0.1"
   }
 }
