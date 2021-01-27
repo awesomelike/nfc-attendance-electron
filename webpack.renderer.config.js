@@ -1,8 +1,15 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+<<<<<<< HEAD
 const path = require('path');
 const rules = require('./webpack.rules');
 
 const assets = ['fonts', 'images', 'icons'];
+=======
+const rules = require('./webpack.rules');
+
+const assets = ['fonts', 'images'];
+const path = require('path');
+>>>>>>> 1f27426640dd0cc899182abbaec6e45c0e69c08a
 
 rules.push({
   test: /\.css$/,
