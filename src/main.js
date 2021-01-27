@@ -6,7 +6,7 @@ const electronLog = require('electron-log');
 const emitter = require('./server/events');
 require('update-electron-app')({
   logger: electronLog,
-  updateInterval: '5h',
+  updateInterval: '10m',
 });
 require('./server');
 

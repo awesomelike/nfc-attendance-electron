@@ -1,7 +1,7 @@
 {
   "name": "nfc-electron",
   "productName": "IUT NFC Reader",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "IUT NFC Reader driver software",
   "repository": {
     "url": "https://github.com/awesomelike/nfc-attendance-electron"

@@ -36,7 +36,7 @@ const App = () => {
       <div className="container-status" style={{
         'background-color': isConnected ? '#1DB866' : '#FF0030',
       }}>
-        <span>{isConnected ? 'Connection established' : 'Disconnected'}</span>
+        <span>{isConnected ? 'Connection established!' : 'Disconnected'}</span>
       </div>
       <div className="container-header-title">
         <span>IUT NFC Reader</span>
