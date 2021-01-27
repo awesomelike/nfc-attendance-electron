@@ -10,6 +10,8 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
+const isDev = () => process.env.npm_lifecycle_event === 'start';
+
 let mainWindow = null;
 let tray = null;
 
@@ -26,14 +28,21 @@ const createWindow = () => {
       webSecurity: false,
     },
   });
-  console.log('PATH<>PATH', path.join(__dirname, 'icons/Icon.ico'));
+
   try {
-    // tray = new Tray(path.join(__dirname, 'icons/Icon.ico'));
-    tray = new Tray('D:\\CODER\\electron-projects\\nfc-electron\\src\\assets\\icons\\Icon.ico');
-    console.log('--------AZAMAT_TRAY', tray);
+    const trayIconPath = isDev()
+      ? path.join(__dirname, '../../src/assets/icons/Icon.ico')
+      : path.join(__dirname, './icons/Icon.ico');
+
+    tray = new Tray(trayIconPath);
+
+    tray.on('double-click', () => {
+      mainWindow.show();
+    });
   } catch (error) {
     console.log(error);
   }
+
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Open',
@@ -49,7 +58,9 @@ const createWindow = () => {
       },
     },
   ]);
+
   tray.setContextMenu(contextMenu);
+
   // eslint-disable-next-line no-undef
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
   mainWindow.on('ready-to-show', () => mainWindow.show());

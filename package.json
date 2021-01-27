@@ -19,14 +19,18 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./src/assets/icons/Icon.ico",
+        "asar": true
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "IutNfcReader",
             "authors": "Azamat Abdullaev",
-            "copyright": "Azamat Abdullaev, 2020"
+            "copyright": "Azamat Abdullaev, 2020",
+            "loadingGif": "./src/assets/icons/IUT.gif"
           }
         },
         {
