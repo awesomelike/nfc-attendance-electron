@@ -1,6 +1,6 @@
 const emitter = require('../events');
 
-export default (socket) => {
+module.exports = (socket) => {
   socket.on('getDetails', () => {
     emitter.on('cardReceived', (rfid) => {
       try {
