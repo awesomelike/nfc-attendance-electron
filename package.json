@@ -1,8 +1,8 @@
 {
   "name": "nfc-electron",
-  "productName": "IUT NFC Reader",
-  "version": "1.0.3",
-  "description": "IUT NFC Reader driver software",
+  "productName": "IUT NFC Attendance",
+  "version": "1.0.4",
+  "description": "IUT NFC Attendance driver software",
   "repository": {
     "url": "https://github.com/awesomelike/nfc-attendance-electron"
   },
@@ -30,7 +30,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "IutNfcReader",
+            "name": "IUTNFCReader",
             "authors": "Azamat Abdullaev",
             "copyright": "Azamat Abdullaev, 2020",
             "loadingGif": "./src/assets/icons/IUT.gif"
