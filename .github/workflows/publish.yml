@@ -16,6 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install -g electron-forge
-          npm run publish
+          #npm install -g electron-forge
+          #npm run publish
+          dir
           
