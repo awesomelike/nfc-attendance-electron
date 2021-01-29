@@ -9,7 +9,7 @@ const indexRouter = require('./routes');
 
 const app = express();
 const server = createServer(app);
-const io = socketIO(server, { rememberTransport: false, transports: ['websocket', 'polling'] });
+const io = socketIO(server, { serveClient: false });
 app.io = io;
 
 app.use(express.json());

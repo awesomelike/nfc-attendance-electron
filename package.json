@@ -1,7 +1,7 @@
 {
   "name": "nfc-electron",
   "productName": "IUT NFC Attendance",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "IUT NFC Attendance driver software",
   "repository": {
     "url": "https://github.com/awesomelike/nfc-attendance-electron"
@@ -23,8 +23,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon": "./src/assets/icons/Icon.ico",
-        "asar": true
+        "icon": "./src/assets/icons/Icon.ico"
       },
       "makers": [
         {
